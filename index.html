@@ -14,18 +14,19 @@
 <link href='stylesheet.css' rel='stylesheet' type='text/css'>
 </head>
 <body style="padding-top: 40vh; position: relative; background: black; background-position: center; background-size: cover; background-repeat: no-repeat; height: 100vh">
+<img src="owl.png" style="width: 200px; width: 200px; margin: 0 auto">
 <h1 style=" font-family: Arial; font-weight: 100;margin-bottom: 30px;font-size: 22px; color: green; text-align: center">Настя, ты приедешь через:</h1>
-<p id="demo" style="font-family: 'digital-7regular'; font-size: 50px; color: forestgreen">
-    <span id="days"></span>
+<p id="demo" style="font-family: 'digital-7regular'; font-size: 50px; color: forestgreen; display: flex; flex-direction: column">
+    <span id="days" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Дней</span>
-    <span id="hours"></span>
+    <span id="hours" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Часов</span>
-    <span id="minutes"></span>
+    <span id="minutes" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Минут</span>
-    <span id="seconds" style="color: forestgreen"></span>
+    <span id="seconds" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Секунд</span>
 </p>
-<img src="owl.png" style="width: 200px; position: absolute; top: 0;">
+
 <script>
     // Set the date we're counting down to
     var countDownDate = new Date("Jun 30, 2018 06:25:00").getTime();
