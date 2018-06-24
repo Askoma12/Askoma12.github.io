@@ -12,20 +12,51 @@
     }
 </style>
 <link href='stylesheet.css' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body style="padding-top: 10vh; position: relative; background: black; background-position: center; background-size: cover; background-repeat: no-repeat; height: 100vh">
-<img src="owl.png" style="width: 200px; width: 200px; margin: 0 auto">
-<h1 style=" font-family: Arial; font-weight: 100;margin-bottom: 30px;font-size: 22px; color: green; text-align: center">Настя, ты приедешь через:</h1>
-<p id="demo" style="font-family: 'digital-7regular'; font-size: 50px; color: forestgreen; display: flex; flex-direction: column">
-    <span id="days" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
+<body style="position: relative; background: black; background-position: center; background-size: cover; background-repeat: no-repeat; height: 100vh">
+
+<img src="owl.png" id="slide">
+
+<h1 style=" font-family: Arial; font-weight: 100;margin-bottom: 30px;font-size: 22px; color: green; text-align: center">
+    Настя, ты приедешь через:</h1>
+<p id="demo"
+   style="font-family: 'digital-7regular'; font-size: 50px; color: forestgreen; display: flex; flex-direction: column">
+    <span id="days" class="date-span"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Дней</span>
-    <span id="hours" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
+    <span id="hours" class="date-span"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Часов</span>
-    <span id="minutes" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
+    <span id="minutes" class="date-span"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Минут</span>
-    <span id="seconds" style="margin: 0 auto; width: 55px; display: inline-block; font-size: 55px"></span>
+    <span id="seconds" class="date-span"></span>
     <span style="font-family: Arial; color: forestgreen; font-size: 12px;">Секунд</span>
 </p>
+
+<div>
+    <div class="form_n">
+        <p><b>Задача №1:</b><br> Иван собрал в два раза больше каштанов, чем Пётр, а Борис собрал на 2 кг больше, чем Пётр. Вместе они собрали 26 кг каштанов. Сколько килограммов собрал каждый из них?</p>
+        <button class="check-answer" data-ansver="8">Ответить</button>
+        <input class="text_answer" type="text" data-right-ansver="6" placeholder="Вписывай сюда ответ">
+        <div class="answer-true" style="display: none">Ответ верный! =)</div>
+        <div class="answer-false" style="display: none">Ответ не верный, думай еще. =(</div>
+    </div>
+    <div class="form_n">
+        <p><b>Задача №2:</b><br> Николай прочитал 2/3 книги и подсчитал, что он прочитал часть книги, которая на 90 страниц больше непрочитанной части. Сколько страниц в целой книге?</p>
+        <button class="check-answer" data-ansver="270">Ответить</button>
+        <input class="text_answer" type="text" data-right-ansver="5" placeholder="Вписывай сюда ответ">
+        <div class="answer-true" style="display: none">Ответ верный! =)</div>
+        <div class="answer-false" style="display: none">Ответ не верный, думай еще. =(</div>
+    </div>
+    <div class="form_n">
+        <p><b>Задача №3:</b><br> Я задумал число, разделил его на 5 , из полученного результата я вычел 154 и получил 6. Какое число я задумал?</p>
+        <button class="check-answer" data-ansver="32">Ответить</button>
+        <input class="text_answer" type="text" data-right-ansver="3" placeholder="Вписывай сюда ответ">
+        <div class="answer-true" style="display: none">Ответ верный! =)</div>
+        <div class="answer-false" style="display: none">Ответ не верный, думай еще. =(</div>
+    </div>
+</div>
+
+
 
 <script>
     // Set the date we're counting down to
@@ -44,6 +75,20 @@
         document.getElementById("minutes").innerHTML = minutes;
         document.getElementById("seconds").innerHTML = seconds;
     }, 1000);
+    //jQuery
+    $(".check-answer").click(function () {
+
+        if ($(this).next().val() == $(this).attr("data-ansver")) {
+            $(this).addClass('vict');
+            $(this).removeClass('loose');
+        } else {
+            $(this).addClass('loose');
+            $(this).removeClass('vict');
+        }
+
+    });
+
+
 </script>
 
 </body>
